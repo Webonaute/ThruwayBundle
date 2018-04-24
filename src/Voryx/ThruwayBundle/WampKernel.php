@@ -24,6 +24,7 @@ use Voryx\ThruwayBundle\Annotation\Subscribe;
 use Voryx\ThruwayBundle\Event\SessionEvent;
 use Voryx\ThruwayBundle\Mapping\MappingInterface;
 use Voryx\ThruwayBundle\Mapping\URIClassMapping;
+use Symfony\Component\Security\Core\Exception\UsernameNotFoundException;
 
 /**
  * Class WampKernel
