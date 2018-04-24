@@ -101,9 +101,7 @@ class VoryxThruwayExtension extends Extension
                 ->addMethodCall('registerModule', [new Reference($authId)]);
         }
 
-        if ($container->hasDefinition('security.user.provider.concrete.in_memory')) {
-            $container->addAliases(['in_memory_user_provider' => 'security.user.provider.concrete.in_memory']);
-        }
+        $container->addAliases(['in_memory_user_provider' => 'security.user.provider.concrete.in_memory']);
 
         //Topic State Handler
         if (isset($config['router']['enable_topic_state']) && $config['router']['enable_topic_state'] === true) {
