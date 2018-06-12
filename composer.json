@@ -31,7 +31,7 @@
   ],
   "autoload": {
     "psr-4": {
-      "Voryx\\ThruwayBundle": "./src/Voryx/ThruwayBundle/",
+      "Voryx\\ThruwayBundle\\": "./src/Voryx/ThruwayBundle/",
       "exclude-from-classmap": ["./src/Voryx/ThruwayBundle/Tests/"]
     }
   },
