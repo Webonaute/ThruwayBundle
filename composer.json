@@ -48,7 +48,7 @@
     "voryx/thruway": "~0.5",
     "symfony/serializer": "^4.0",
     "symfony/expression-language": "^4.0",
-    "symfony/annotations-pack": "^4.0",
+    "symfony/annotations-pack": "^1.0",
     "react/child-process": "~0.4",
     "symfony/event-dispatcher": "^4.0",
     "thruway/pawl-transport": "^0.5.0"
