@@ -1,14 +1,15 @@
 {
   "name": "voryx/thruway-bundle",
   "type": "symfony-bundle",
-  "description": "WebSockets (WAMP2) integration for Symfony2",
+  "description": "WebSockets (WAMP2) integration for Symfony4",
   "keywords": [
     "WebSockets",
     "WAMP",
     "WAMP2",
     "Autobahn",
     "Sockets",
-    "Symfony"
+    "Symfony",
+    "Symfony4"
   ],
   "license": "MIT",
   "authors": [
@@ -21,26 +22,37 @@
       "name": "Matt Bonneau",
       "email": "matt@bonneau.net",
       "role": "Developer"
+    },
+    {
+      "name": "Mathieu Delisle",
+      "email": "mathieu@delisle.com",
+      "role": "Contributor"
     }
   ],
   "autoload": {
-    "psr-0": {
-      "Voryx\\ThruwayBundle": "src"
+    "psr-4": {
+      "Voryx\\ThruwayBundle": "./src/Voryx/ThruwayBundle/",
+      "exclude-from-classmap": ["./src/Voryx/ThruwayBundle/Tests/"]
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Voryx\\ThruwayBundle\\Tests\\": "./src/Voryx/ThruwayBundle/Tests"
     }
   },
   "require": {
-    "php": ">=5.6",
-    "symfony/finder": "^2.7|^3.0|^4.0",
+    "php": ">=7.1",
+    "symfony/finder": "^4.0",
     "voryx/thruway": "~0.5",
-    "symfony/serializer": "^2.7|^3.0|^4.0",
+    "symfony/serializer": "^4.0",
     "react/child-process": "~0.4",
-    "symfony/event-dispatcher": "^2.7|^3.0|^4.0",
+    "symfony/event-dispatcher": "^4.0",
     "thruway/pawl-transport": "^0.5.0"
   },
   "require-dev": {
-    "symfony/symfony": "^2.7|^3.0|^4.0",
-    "doctrine/orm": "~2.1",
-    "symfony/yaml": "2.*",
-    "phpunit/phpunit": "~5.0"
+    "symfony/symfony": "^4.0",
+    "doctrine/orm": "^2.5",
+    "symfony/yaml": "^4.0",
+    "phpunit/phpunit": "^6.0|^7.0"
   }
 }
