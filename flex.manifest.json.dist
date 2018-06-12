@@ -1,0 +1,17 @@
+#### This is a proposition for symfony/flex support.
+#### https://symfony.com/doc/4.0/setup/flex.html
+{
+  "bundles": {
+    "Voryx\\ThruwayBundle\\VoryxThruwayBundle": ["all"]
+  },
+  "copy-from-recipe": {
+    "config/": "%CONFIG_DIR%/"
+  },
+  "env": {
+    "VORYX_THRUWAY_URL": "ws://127.0.0.1:8081",
+    "VORYX_THRUWAY_ROUTER_IP": "ws://127.0.0.1:8081",
+    "VORYX_THRUWAY_ROUTER_PORT": "ws://127.0.0.1:8081",
+    "VORYX_THRUWAY_ROUTER_TRUSTED_PORT": "ws://127.0.0.1:8081"
+  },
+  "aliases": ["thruway", "websocket"]
+}

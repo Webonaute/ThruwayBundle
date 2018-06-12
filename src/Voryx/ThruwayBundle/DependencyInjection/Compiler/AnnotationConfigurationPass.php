@@ -95,9 +95,10 @@ class AnnotationConfigurationPass implements CompilerPassInterface
             $finder->files()->in($controllerDir)->name('*.php')->contains('Voryx\ThruwayBundle\Annotation')->depth('< 5');
 
             foreach ($finder as $file) {
-                $files[] = $this->getClassName($controllerDir . $file->getFilename());
+                $files[] = $this->getClassName($file->getRealPath());
             }
         } catch (\Exception $e) {
+            $test = "";
             // Don't do anything if the Controller folder doesn't exist
         }
 
