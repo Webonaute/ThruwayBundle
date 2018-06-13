@@ -17,12 +17,14 @@ use Symfony\Component\Serializer\Serializer;
 use Thruway\CallResult;
 use Thruway\ClientSession;
 use Thruway\Peer\Client;
+use Thruway\Logging\Logger;
 use Thruway\Transport\TransportInterface;
 use Voryx\ThruwayBundle\Annotation\Register;
 use Voryx\ThruwayBundle\Annotation\Subscribe;
 use Voryx\ThruwayBundle\Event\SessionEvent;
 use Voryx\ThruwayBundle\Mapping\MappingInterface;
 use Voryx\ThruwayBundle\Mapping\URIClassMapping;
+use Symfony\Component\Security\Core\Exception\UsernameNotFoundException;
 
 /**
  * Class WampKernel
@@ -474,7 +476,11 @@ class WampKernel implements HttpKernelInterface
         $config = $this->container->getParameter('voryx_thruway');
 
         if ($container->has($config['user_provider'])) {
-            $user = $container->get($config['user_provider'])->loadUserByUsername($authid);
+            try {
+                $user = $container->get($config['user_provider'])->loadUserByUsername($authid);
+            } catch (UsernameNotFoundException $exception) {
+                Logger::info($exception, $exception->getMessage());
+            }
         }
 
         $user = $user ?: new User($authid, null);
